@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.6.162
+IP 51.250.6.162
 
 Frontend https://mestogram.nomoredomainsicu.ru
 
