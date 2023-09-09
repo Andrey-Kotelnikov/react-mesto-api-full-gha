@@ -1,0 +1,7 @@
+.header__menu {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}

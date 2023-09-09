@@ -1,0 +1,10 @@
+.element__like-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}

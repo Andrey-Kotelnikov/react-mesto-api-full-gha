@@ -1,0 +1,14 @@
+.popup__input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__input-container:first-of-type {
+  margin-top: 47px;
+  margin-bottom: 30px;
+}
+
+.popup__input-container:last-of-type {
+  margin-bottom: 10px;
+}

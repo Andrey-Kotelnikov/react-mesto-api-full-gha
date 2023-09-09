@@ -1,0 +1,13 @@
+.login__input {
+  color: #fff;
+  background: #000;
+  border: 0;
+  padding-bottom: 9px;
+  border-bottom: 2px solid rgba(204, 204, 204, 1);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.login__input:first-of-type {
+  margin-bottom: 28px;
+}
