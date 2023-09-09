@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://mestogram.nomoredomainsicu.ru';
+export const BASE_URL = 'https://api.mestogram.nomoredomainsicu.ru';
 
 const checkStatus = (res) => {
   if (res.ok) {
