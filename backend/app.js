@@ -1,12 +1,11 @@
 const express = require("express");
 const mongooose = require("mongoose");
-const process = require("process");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const { errors } = require("celebrate");
 const cookieParser = require("cookie-parser");
 const { rateLimit } = require("express-rate-limit");
-const cors = require('cors');
+const cors = require("cors");
 
 const userRouter = require("./routes/users");
 const cardRouter = require("./routes/cards");
@@ -18,17 +17,9 @@ const {
 } = require("./middlewares/joi-validation");
 const errorHandler = require("./middlewares/error-handler");
 const NotFoundError = require("./errors/not-found-error");
-const { PORT, DB_URL } = require('./utils/app.config');
+const { PORT, DB_URL } = require("./utils/app.config");
 
-
-
-
-
-
-
-const { requestLogger, errorLogger } = require('./middlewares/logger');
-
-
+const { requestLogger, errorLogger } = require("./middlewares/logger");
 
 const app = express();
 
@@ -55,21 +46,22 @@ app.use(
   }),
 );
 
-const ENV =   'http://localhost:3000';
+const ENV = "http://localhost:3000";
 
-app.use(cors({
-  origin: true,
-  credentials: true,
-  ENV,
-}));
-
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+    ENV,
+  }),
+);
 
 app.use(requestLogger); // подключаем логгер запросов
 
 // Проверит приложение на возобновление после ошибки
-app.get('/crash-test', () => {
+app.get("/crash-test", () => {
   setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
+    throw new Error("Сервер сейчас упадёт");
   }, 0);
 });
 
@@ -83,10 +75,7 @@ app.use("*", auth, (req, res, next) =>
   next(new NotFoundError("Неверный путь")),
 );
 
-
 app.use(errorLogger); // подключаем логгер ошибок
-
-
 
 // Обработчик ошибок приходящих от celebrate
 app.use(errors());

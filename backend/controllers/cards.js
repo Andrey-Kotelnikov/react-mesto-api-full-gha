@@ -1,5 +1,5 @@
 const Card = require("../models/card");
-//const user = require('../models/user')
+// const user = require('../models/user')
 const ValidationError = require("../errors/validation-error");
 const NotFoundError = require("../errors/not-found-error");
 const AccessError = require("../errors/access-error");
@@ -7,9 +7,9 @@ const AccessError = require("../errors/access-error");
 // Получение всех карточек
 module.exports.getCards = (req, res, next) => {
   Card.find({})
-    //.populate(['owner', 'likes'])
-    //.populate({ path: "user", strictPopulate: false })
-    //.exec()
+    // .populate(['owner', 'likes'])
+    // .populate({ path: "user", strictPopulate: false })
+    // .exec()
     .then((cards) => res.send(cards))
     .catch(next);
 };

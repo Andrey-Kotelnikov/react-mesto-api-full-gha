@@ -6,7 +6,7 @@ const NotFoundError = require("../errors/not-found-error");
 const UnauthorizedError = require("../errors/unauthorized-error");
 const ExistError = require("../errors/exist-error");
 
-const { JWT_SECRET } = require('../utils/app.config');
+const { JWT_SECRET } = require("../utils/app.config");
 
 // Получение всех пользователей
 module.exports.getUsers = (req, res, next) => {
