@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../images/header__logo.svg';
+import * as auth from '../utils/auth'
 
 function Header (props) {
   const [email, setEmail] = React.useState('')
@@ -31,9 +32,14 @@ function Header (props) {
 
   function signOut() {
     console.log('sign out')
-    localStorage.removeItem('token');
-    props.handleLogin(false)
-    navigate('/sign-in', {replace: true});
+    auth.signOut()
+      .then((res) => {
+        props.handleLogin(false)
+        navigate('/sign-in', {replace: true});
+      })
+      .catch(err => console.log(err))
+    //localStorage.removeItem('token');
+    
   }
 
   function handleClick () {

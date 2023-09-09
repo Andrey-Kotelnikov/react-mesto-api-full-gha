@@ -70,6 +70,9 @@ app.post("/signup", validationSignup, createUser); // Роут регистра�
 
 app.use("/users", auth, userRouter); // Настраиваем роуты для users
 app.use("/cards", auth, cardRouter); // Настраиваем роуты для cards
+app.get("/signout", auth, (req, res) => {
+  res.clearCookie("jwt").send({ message: "Выход из аккаунта" });
+});
 app.use("*", auth, (req, res, next) =>
   // Остальные пути
   next(new NotFoundError("Неверный путь")),
