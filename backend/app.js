@@ -66,6 +66,12 @@ app.use(cors({
 
 app.use(requestLogger); // подключаем логгер запросов
 
+// Проверит приложение на возобновление после ошибки
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post("/signin", validationSignin, login); // Роут логина
 app.post("/signup", validationSignup, createUser); // Роут регистрации
