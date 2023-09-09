@@ -18,9 +18,12 @@ const {
 } = require("./middlewares/joi-validation");
 const errorHandler = require("./middlewares/error-handler");
 const NotFoundError = require("./errors/not-found-error");
+const { PORT, DB_URL } = require('./utils/app.config');
 
-const { PORT = 3000, DB_URL = "mongodb://127.0.0.1:27017/mestodb" } =
-  process.env;
+
+
+
+
 
 
 const { requestLogger, errorLogger } = require('./middlewares/logger');
