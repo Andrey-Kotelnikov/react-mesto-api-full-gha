@@ -95,7 +95,7 @@ class Api {
 
 export const api = new Api({
   //baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66',
-  baseUrl: 'http://localhost:3001',
+  baseUrl: 'https://api.mestogram.nomoredomainsicu.ru',
   headers: {
     //authorization: 'f10f5a64-3064-497a-969f-575534cc1185',
     'Content-Type': 'application/json',

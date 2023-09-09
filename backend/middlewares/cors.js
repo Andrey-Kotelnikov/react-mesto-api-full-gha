@@ -3,6 +3,8 @@ const allowedCors = [
   'localhost:3000',
   'http://localhost:3000',
   'https://localhost:3000',
+  'http://mestogram.nomoredomainsicu.ru',
+  'https://mestogram.nomoredomainsicu.ru',
 ]
 
 const cors = (req, res, next) => {
