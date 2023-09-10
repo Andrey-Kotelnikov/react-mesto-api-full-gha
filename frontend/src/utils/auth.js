@@ -1,4 +1,5 @@
 export const BASE_URL = 'https://api.mestogram.nomoredomainsicu.ru';
+//export const BASE_URL = 'http://localhost:3000';
 
 const checkStatus = (res) => {
   if (res.ok) {

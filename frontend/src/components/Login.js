@@ -23,22 +23,23 @@ function Login(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     auth.login(formValue.email, formValue.password)
-      .then((data) => {
-        navigate('/main', {replace: true});
+      .then((res) => {
+        /*props.handleLogin(true);
         props.setUserData({
           email: formValue.email
         })
         setFormValue({email: '', password: ''});
+        navigate('/main', {replace: true});*/
 
-        /*if (data.token) {
-          console.log(data.token)
+        if (res) {
+          //console.log(data.token)
           props.setUserData({
             email: formValue.email
           })
           setFormValue({email: '', password: ''});
           props.handleLogin(true);
           navigate('/main', {replace: true});
-        }*/
+        }
       })
       .catch((err) => {console.log(err)})
   }
