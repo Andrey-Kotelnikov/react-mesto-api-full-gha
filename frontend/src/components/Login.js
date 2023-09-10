@@ -24,7 +24,13 @@ function Login(props) {
     e.preventDefault();
     auth.login(formValue.email, formValue.password)
       .then((data) => {
-        if (data.token) {
+        navigate('/main', {replace: true});
+        props.setUserData({
+          email: formValue.email
+        })
+        setFormValue({email: '', password: ''});
+
+        /*if (data.token) {
           console.log(data.token)
           props.setUserData({
             email: formValue.email
@@ -32,7 +38,7 @@ function Login(props) {
           setFormValue({email: '', password: ''});
           props.handleLogin(true);
           navigate('/main', {replace: true});
-        }
+        }*/
       })
       .catch((err) => {console.log(err)})
   }
